@@ -16,15 +16,15 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
-        val numbers = fibonacci(100)
+        val numbers = fibonacciSequence(100)
         binding.rvNumbers.layoutManager = LinearLayoutManager(this)
         val numbersAdapter = NumbersRecyclerView(numbers)
         binding.rvNumbers.adapter = numbersAdapter
         }
 
-    fun fibonacci(n: Int): List<Int>{
+    fun fibonacciSequence(myNums: Int): List<Int>{
         val numbers = mutableListOf(0,1)
-        while (numbers.size < n){
+        while (numbers.size < myNums){
             numbers.add(numbers[numbers.lastIndex] + numbers[numbers.lastIndex -1])
 
         }
